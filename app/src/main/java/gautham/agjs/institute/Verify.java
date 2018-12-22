@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,15 +26,15 @@ public class Verify extends AppCompatActivity {
 
     public void connect_wifi(View v) {
 
-        String ssid = "071065085084072065077";
-        String pass = "qwertyuiop";
+        String ssid = "Austin";
+        String pass = "asrjebas7498754624";
         WifiConfiguration wifiConfig = new WifiConfiguration();
         WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
         wifiManager.setWifiEnabled(true);
 
         List<WifiConfiguration> list = wifiManager.getConfiguredNetworks();
         for (WifiConfiguration i : list) {
-            if (i.SSID != null && i.SSID.equals("\"" + ssid + "\"")) {
+            if (i.SSID != null && i.SSID.equalsIgnoreCase("\"" + ssid + "\"")) {
                 Toast.makeText(Verify.this, "Already Connected, Click on Next", Toast.LENGTH_SHORT).show();
             } else {
                 wifiConfig.SSID = String.format("\"%s\"", ssid);
@@ -53,21 +54,7 @@ public class Verify extends AppCompatActivity {
 
     public void next_verify(View v) {
 
-        /*String ssid = "071065085084072065077";
-        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
-        List<WifiConfiguration> list = wifiManager.getConfiguredNetworks();
-        for (WifiConfiguration i : list) {
-            if (i.SSID != null && i.SSID.equals("\"" + ssid + "\"")) {
-                Intent intent = new Intent(Verify.this, MainActivity.class);
-                startActivity(intent);
-                break;
-            } else {
-                Toast.makeText(Verify.this, "Please Connect To Wifi", Toast.LENGTH_LONG).show();
-            }
-
-        }*/
         Intent intent = new Intent(Verify.this, Login.class);
         startActivity(intent);
-
     }
 }
