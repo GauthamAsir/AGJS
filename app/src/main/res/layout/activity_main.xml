@@ -14,4 +14,25 @@
         android:layout_centerVertical="true"
         android:onClick="update_db"
         android:text="@string/update_stats" />
+
+    <TextView
+        android:id="@+id/time_cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="146dp"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="79dp"
+        android:text="Your Time Of Arrival To Tuition"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 </RelativeLayout>
