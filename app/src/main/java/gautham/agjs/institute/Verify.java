@@ -21,7 +21,7 @@ public class Verify extends AppCompatActivity {
 
     public void connect_wifi(View v) {
 
-        String ssid = "Austin";
+        String ssid = "AUSTIN";
         String pass = "asrjebas7498754624";
         WifiConfiguration wifiConfig = new WifiConfiguration();
         WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
