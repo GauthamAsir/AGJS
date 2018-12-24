@@ -1,29 +1,18 @@
 package gautham.agjs.institute;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.jar.Attributes;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     String personName;
     String currentDateTimeString;
-
+    ProgressDialog mprogress;
     long date = System.currentTimeMillis();
 
     SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy");
@@ -49,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         a.setText(currentDateTimeString);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child(dateString);
+        mprogress = new ProgressDialog(this);
+        mprogress.setMessage("Adding Your Entry");
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (acct != null) {
@@ -81,9 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
         String Name = personName;
         String Time = currentDateTimeString.trim();
-
+        mprogress.show();
         UpdateData updateData = new UpdateData(Name, Time);
         databaseReference.push().setValue(updateData);
+        mprogress.dismiss();
+        Toast.makeText(MainActivity.this,"Updated Your Entry", Toast.LENGTH_LONG).show();
     }
 
 
