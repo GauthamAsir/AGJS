@@ -1,15 +1,10 @@
 package gautham.agjs.institute;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,12 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void bt_register(View v){
-        Toast.makeText(MainActivity.this,"Work In Progress" , Toast.LENGTH_SHORT).show();
+    public void update_db(View v){
 
     }
-
-
 
     @Override
     public void onBackPressed()
