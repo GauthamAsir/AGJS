@@ -1,13 +1,11 @@
 package gautham.agjs.institute;
 
 import android.content.Intent;
-import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -126,14 +124,9 @@ public class Login extends AppCompatActivity {
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (acct != null) {
             String personName = acct.getDisplayName();
-            String personGivenName = acct.getGivenName();
-            String personFamilyName = acct.getFamilyName();
-            String personEmail = acct.getEmail();
-            String personId = acct.getId();
-            Uri personPhoto = acct.getPhotoUrl();
+            //Uri personPhoto = acct.getPhotoUrl();
             Toast.makeText(this,"Welcome "+ personName ,Toast.LENGTH_LONG).show();
             Intent i = new Intent(Login.this, MainActivity.class);
-            //i.putExtra("Email", mAuth.getCurrentUser().acct.getEmail());
             startActivity(i);
         }
     }

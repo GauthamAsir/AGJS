@@ -7,20 +7,11 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="128dp"
-        android:onClick="bt_register"
-        android:text="@string/registeration" />
-
-    <Button
-        android:id="@+id/bt_sign_out"
+        android:id="@+id/bt_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/sign_out_2" />
+        android:onClick="update_db"
+        android:text="@string/update_stats" />
 </RelativeLayout>

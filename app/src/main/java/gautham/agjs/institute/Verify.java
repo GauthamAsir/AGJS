@@ -1,13 +1,10 @@
 package gautham.agjs.institute;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiConfiguration;
-import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -15,8 +12,6 @@ import java.util.List;
 
 public class Verify extends AppCompatActivity {
 
-
-    StringBuilder sb = new StringBuilder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
