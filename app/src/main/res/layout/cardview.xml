@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/dis_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dis_time"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/name"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dis_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="58dp"
+        android:text="@string/time"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/dis_name"
+        android:layout_marginStart="1dp"
+        android:layout_toEndOf="@+id/dis_name"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="267dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/dis_time"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toEndOf="@+id/dis_time"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
