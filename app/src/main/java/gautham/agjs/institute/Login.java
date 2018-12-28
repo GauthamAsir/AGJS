@@ -125,7 +125,6 @@ public class Login extends AppCompatActivity {
         if (acct != null) {
             String personName = acct.getDisplayName();
             //Uri personPhoto = acct.getPhotoUrl();
-            Toast.makeText(this,"Welcome "+ personName ,Toast.LENGTH_SHORT).show();
             Intent i = new Intent(Login.this, MainActivity.class);
             startActivity(i);
         }
