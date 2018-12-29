@@ -3,22 +3,16 @@ package gautham.agjs.institute;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     String currentDateTimeString;
     ProgressDialog mprogress;
     long date = System.currentTimeMillis();
-    public TextView d ;
+    private TextView d ;
+    private TextView a;
 
     SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy");
     String dateString = sdf.format(date);
@@ -42,9 +37,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-        TextView a = (TextView)findViewById(R.id.time_cal);
+
+        Date d2 = new Date();
+        SimpleDateFormat sdf2 = new SimpleDateFormat("hh:mm a");
+        currentDateTimeString = sdf2.format(d2);
+        a = findViewById(R.id.time_cal);
         a.setText(currentDateTimeString);
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child(dateString);
         mprogress = new ProgressDialog(this);
@@ -54,33 +53,12 @@ public class MainActivity extends AppCompatActivity {
         if (acct != null) {
             personName = acct.getDisplayName();
         }
+        d = findViewById(R.id.name_display);
+        d.setText(personName);
 
 
     }
 
-
-    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference(dateString);
-    ValueEventListener eventListener = new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-            for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                String db_name = ds.child("name").getValue(String.class);
-                String db_time = ds.child("time").getValue(String.class);
-                Log.d("TAG", db_name + " / " + db_time);
-                //temp_dis = (TextView)findViewById(R.id.temp);
-                //temp_dis.setText(db_name + db_time);
-                Toast.makeText(MainActivity.this,db_name,Toast.LENGTH_SHORT).show();
-            }
-
-        }
-
-        @Override
-        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-        }
-    };
 
     public void update_db(View v){
 
@@ -109,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     public void AddData(){
 
         String Name = personName;
-        String Time = currentDateTimeString.trim();
+        String Time = currentDateTimeString;
         mprogress.show();
         UpdateData updateData = new UpdateData(Name, Time);
         databaseReference.push().setValue(updateData);

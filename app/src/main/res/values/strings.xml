@@ -10,7 +10,7 @@
     <string name="name">"Name:    "</string>
     <string name="time">"Time:   "</string>
     <string name="check_details">Check</string>
-    <string name="your_time_of_arrival_to_tuition">Your Time Of Arrival To Tuition</string>
+    <string name="your_time_of_arrival_to_tuition">Time Of Arrival To Tuition</string>
     <string name="view_data">View Data</string>
 
 </resources>
