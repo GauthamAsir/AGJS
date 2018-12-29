@@ -17,6 +17,7 @@ public class Verify extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify);
+
     }
 
     public void connect_wifi(View v) {
