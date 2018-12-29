@@ -14,7 +14,8 @@
         android:layout_marginTop="30dp"
         android:text="@string/name"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_background"/>
 
     <TextView
         android:id="@+id/dis_time"
@@ -26,7 +27,8 @@
         android:layout_marginTop="58dp"
         android:text="@string/time"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_background"/>
 
     <TextView
         android:id="@+id/name"
@@ -35,18 +37,22 @@
         android:layout_alignBottom="@+id/dis_name"
         android:layout_marginStart="1dp"
         android:layout_toEndOf="@+id/dis_name"
+        android:background="@drawable/button_background"
+        android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
 
 
     <TextView
         android:id="@+id/time"
-        android:layout_width="267dp"
+        android:layout_width="247dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/dis_time"
-        android:layout_marginStart="13dp"
+        android:layout_marginStart="1dp"
         android:layout_marginBottom="1dp"
         android:layout_toEndOf="@+id/dis_time"
+        android:background="@drawable/button_background"
+        android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold" />
 
