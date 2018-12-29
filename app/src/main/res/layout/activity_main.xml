@@ -11,18 +11,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="109dp"
+        android:layout_marginBottom="185dp"
+        android:background="@drawable/button_background"
         android:onClick="update_db"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:text="@string/update_stats" />
 
     <TextView
         android:id="@+id/time_cal"
-        android:layout_width="243dp"
+        android:layout_width="209dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/temp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-60dp"
-        android:layout_marginTop="215dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="222dp"
+        android:background="@drawable/button_background"
         android:textAlignment="center"
         android:textSize="20sp" />
 
@@ -33,19 +38,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="79dp"
-        android:text="@string/your_time_of_arrival_to_tuition"
+        android:background="@drawable/button_background"
+        android:text="  Time Of Arrival To Tution  "
         android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/temp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="179dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
         android:textStyle="bold" />
 
     <Button
@@ -54,8 +49,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="122dp"
+        android:background="@drawable/button_background"
         android:onClick="viewData"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:text="@string/view_data" />
 
     <TextView
@@ -63,21 +62,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="174dp"
-        android:layout_marginEnd="-3dp"
-        android:layout_toStartOf="@+id/bt_update"
-        android:text="User Name:  "
+        android:layout_marginTop="162dp"
+        android:background="@drawable/button_background"
+        android:text="  User Name:  "
         android:textSize="22sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/name_display"
-        android:layout_width="243dp"
+        android:layout_width="209dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/time_cal"
         android:layout_alignBottom="@+id/textView"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="1dp"
+        android:background="@drawable/button_background"
         android:textAlignment="center"
         android:textSize="22sp" />
 
@@ -87,9 +86,10 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/time_cal"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="0dp"
-        android:text="Time:  "
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/button_background"
+        android:text="  Time:  "
         android:textSize="22sp"
         android:textStyle="bold" />
 
