@@ -37,7 +37,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        signIn = (SignInButton)findViewById(R.id.bt_sigin);
+        signIn = findViewById(R.id.bt_sigin);
         //signOut = (Button)findViewById(R.id.bt_signout);
         mAuth = FirebaseAuth.getInstance();
 
@@ -123,8 +123,6 @@ public class Login extends AppCompatActivity {
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (acct != null) {
-            String personName = acct.getDisplayName();
-            //Uri personPhoto = acct.getPhotoUrl();
             Intent i = new Intent(Login.this, MainActivity.class);
             startActivity(i);
         }

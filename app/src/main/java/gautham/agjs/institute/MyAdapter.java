@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -35,8 +34,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         myViewHolder.name.setText(profiles.get(position).getName());
         myViewHolder.time.setText(profiles.get(position).getTime());
-        //Picasso.get().load(profiles.get(position).getProfilepic()).into(myViewHolder.profilepic);
-
     }
 
     @Override
@@ -47,14 +44,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView name, time;
-        //ImageView profilepic;
-        Button btn;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.name);
-            time = (TextView) itemView.findViewById(R.id.time);
-            //profilepic = (ImageView) itemView.findViewById(R.id.profilepic);
+            name = itemView.findViewById(R.id.name);
+            time = itemView.findViewById(R.id.time);
         }
 
     }

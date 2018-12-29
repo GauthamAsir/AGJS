@@ -9,20 +9,22 @@
         android:id="@+id/bt_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginBottom="109dp"
         android:onClick="update_db"
         android:text="@string/update_stats" />
 
     <TextView
         android:id="@+id/time_cal"
-        android:layout_width="wrap_content"
+        android:layout_width="243dp"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/temp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="146dp"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:layout_marginStart="-60dp"
+        android:layout_marginTop="215dp"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -52,8 +54,43 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="120dp"
-        android:text="@string/view_data"
-        android:onClick="viewData"/>
+        android:layout_marginBottom="50dp"
+        android:onClick="viewData"
+        android:text="@string/view_data" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="174dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_toStartOf="@+id/bt_update"
+        android:text="User Name:  "
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/name_display"
+        android:layout_width="243dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/time_cal"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="1dp"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/time_cal"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="0dp"
+        android:text="Time:  "
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
