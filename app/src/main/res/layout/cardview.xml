@@ -45,7 +45,7 @@
 
     <TextView
         android:id="@+id/time"
-        android:layout_width="247dp"
+        android:layout_width="267dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/dis_time"
         android:layout_marginStart="1dp"

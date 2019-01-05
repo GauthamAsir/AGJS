@@ -1,8 +1,20 @@
 package gautham.agjs.institute;
 
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+
+import android.content.Context;
+import android.content.Intent;
+import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -23,10 +35,21 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     String personName;
     String currentDateTimeString;
+
     ProgressDialog mprogress;
     long date = System.currentTimeMillis();
     private TextView d ;
     private TextView a;
+
+    long date = System.currentTimeMillis();
+    private TextView d ;
+    private TextView a;
+    LocationManager locationManager ;
+    boolean GpsStatus ;
+    Context context;
+
+    NetworkInfo wifiCheck;
+
 
     SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy");
     String dateString = sdf.format(date);
@@ -46,8 +69,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child(dateString);
+
         mprogress = new ProgressDialog(this);
         mprogress.setMessage("Adding Your Entry");
+
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (acct != null) {
@@ -60,9 +85,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     public void update_db(View v){
 
         AddData();
+
+    public void update_db(View v) {
+
+        String ssid = "071065085084072065077";
+        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        WifiInfo info = wifiManager.getConnectionInfo();
+        String ssid2 = info.getSSID();
+
+        context = getApplicationContext();
+        GPSStatus();
+
+        ConnectivityManager connectionManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        wifiCheck = connectionManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+
+        if (wifiCheck.isConnected()) {
+            if (GpsStatus == true) {
+
+                if (ssid2.equals("\"" + ssid + "\"")) {
+                    AddData();
+                } else {
+                    AlertBox("Error","Make sure you are connected to Wifi");
+                }
+            }
+            else {
+                AlertBox("Error","Make sure you have enabled Location");
+            }
+
+        }
+        else {
+            AlertBox("Error","Make sure Wifi is Enabled");
+        }
+
 
     }
 
@@ -88,12 +146,34 @@ public class MainActivity extends AppCompatActivity {
 
         String Name = personName;
         String Time = currentDateTimeString;
+
         mprogress.show();
         UpdateData updateData = new UpdateData(Name, Time);
         databaseReference.push().setValue(updateData);
         mprogress.dismiss();
         Toast.makeText(MainActivity.this,"Updated Your Entry", Toast.LENGTH_SHORT).show();
+
+        UpdateData updateData = new UpdateData(Name, Time);
+        databaseReference.push().setValue(updateData);
+        AlertBox("Success","Updated Your Entry");
+    }
+
+
+    public void GPSStatus(){
+        locationManager = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
+        GpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
+
+
+    public void AlertBox(String title, String msg){
+        AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+        alert.setTitle(title);
+        alert.setMessage(msg);
+        alert.setPositiveButton("OK",null);
+        alert.show();
+
     }
 
 
 }
+
