@@ -1,13 +1,15 @@
 <resources>
     <string name="app_name">Institute</string>
-    <string name="connect_to_wifi">"  Connect To Wifi  "</string>
+    <string name="connect_to_wifi">Connect To Wifi</string>
     <string name="next">Next</string>
+    <string name="registeration">Registeration</string>
     <string name="login">Login</string>
     <string name="sign_out">Sign Out</string>
     <string name="sign_out_2">SIGN OUT</string>
-    <string name="update_stats">"  Update Stats  "</string>
-    <string name="name">"  Name:  "</string>
-    <string name="time">"  Time: "</string>
+    <string name="update_stats">Update Stats</string>
+    <string name="name">"Name:    "</string>
+    <string name="time">"Time:   "</string>
+    <string name="check_details">Check</string>
     <string name="your_time_of_arrival_to_tuition">Time Of Arrival To Tuition</string>
     <string name="view_data">View Data</string>
 
