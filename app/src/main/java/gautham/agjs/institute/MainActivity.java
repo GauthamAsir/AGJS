@@ -2,9 +2,6 @@ package gautham.agjs.institute;
 
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.os.Bundle;
-
 import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
@@ -14,7 +11,6 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -41,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView d ;
     private TextView a;
 
-    long date = System.currentTimeMillis();
-    private TextView d ;
-    private TextView a;
     LocationManager locationManager ;
     boolean GpsStatus ;
     Context context;
@@ -85,14 +78,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    public void update_db(View v){
-
-        AddData();
-
     public void update_db(View v) {
 
-        String ssid = "071065085084072065077";
+        String ssid = "AUSTIN";
         WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
         WifiInfo info = wifiManager.getConnectionInfo();
         String ssid2 = info.getSSID();
@@ -109,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 if (ssid2.equals("\"" + ssid + "\"")) {
                     AddData();
                 } else {
-                    AlertBox("Error","Make sure you are connected to Wifi");
+                    AlertBox("Error","Make sure you are connected to AUSTIN Wifi");
                 }
             }
             else {
@@ -147,11 +135,6 @@ public class MainActivity extends AppCompatActivity {
         String Name = personName;
         String Time = currentDateTimeString;
 
-        mprogress.show();
-        UpdateData updateData = new UpdateData(Name, Time);
-        databaseReference.push().setValue(updateData);
-        mprogress.dismiss();
-        Toast.makeText(MainActivity.this,"Updated Your Entry", Toast.LENGTH_SHORT).show();
 
         UpdateData updateData = new UpdateData(Name, Time);
         databaseReference.push().setValue(updateData);

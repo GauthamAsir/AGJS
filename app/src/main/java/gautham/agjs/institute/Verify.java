@@ -1,15 +1,15 @@
 package gautham.agjs.institute;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
-
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
